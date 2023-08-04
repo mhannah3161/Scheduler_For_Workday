@@ -1,5 +1,4 @@
 // GLOBAL VARS
-var today = moment();
 // reference the whole task (time and textarea)
 var timeBlockEl = document.querySelector('.container');
 
