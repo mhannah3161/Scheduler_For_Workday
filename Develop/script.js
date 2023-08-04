@@ -1,10 +1,14 @@
 // GLOBAL VARS
+var today = new Date();
+
+console.log(today.getHours())
+
 // reference the whole task (time and textarea)
+console.log(today);
 var timeBlockEl = document.querySelector('.container');
 
 // This wil show current date on id of "currentDay"
-var today = dayjs();
-$('#currentDay').text(today.format('MMM D, YYYY'));
+$('#currentDay').text(today);
 
 // Event listener for saveBtn click
 $('.saveBtn').on('click', function () {
@@ -18,21 +22,21 @@ $('.saveBtn').on('click', function () {
 });
 
 // This will get items from local storage. 
-$('#hour8 .description').val(localStorage.getItem('8'));
-$('#hour9 .description').val(localStorage.getItem('9'));
-$('#hour10 .description').val(localStorage.getItem('10'));
-$('#hour11 .description').val(localStorage.getItem('11'));
-$('#hour12 .description').val(localStorage.getItem('12'));
-$('#hour13 .description').val(localStorage.getItem('13'));
-$('#hour14 .description').val(localStorage.getItem('14'));
-$('#hour15 .description').val(localStorage.getItem('15'));
-$('#hour16 .description').val(localStorage.getItem('16'));
-$('#hour17 .description').val(localStorage.getItem('17'));
+$('#hour8 .description').val(localStorage.getItem('hour8'));
+$('#hour9 .description').val(localStorage.getItem('hour9'));
+$('#hour10 .description').val(localStorage.getItem('hour10'));
+$('#hour11 .description').val(localStorage.getItem('hour11'));
+$('#hour12 .description').val(localStorage.getItem('hour12'));
+$('#hour13 .description').val(localStorage.getItem('hour13'));
+$('#hour14 .description').val(localStorage.getItem('hour14'));
+$('#hour15 .description').val(localStorage.getItem('hour15'));
+$('#hour16 .description').val(localStorage.getItem('hour16'));
+$('#hour17 .description').val(localStorage.getItem('hour17'));
 
 // This function tracks tasks making the tasks change their color if they are past, present or future
 function taskTracker() {
-  // get hours of current day (24hrs)
-  var currentHour = today.hours();
+  // get hour of current day 
+  var currentHour = today.getHours();
 
   // this will loop over each block of time
   $('.time-block').each(function () {
